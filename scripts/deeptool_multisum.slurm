@@ -14,7 +14,7 @@ __author__='Seguineau Pauline Zonon Aristides'
 __email__='pauline.seguineau@etu.uca.fr aristides.zonon@etu.uca.fr'
 __credits__=['Seguineau Pauline Zonon Aristides']
 __license__='GPL3'
-__maintainer__='Seguineau Pauline'
+__maintainer__='Seguineau Pauline Zonon Aristides'
 __status__='Development'
 __version__='0.0.1'
 

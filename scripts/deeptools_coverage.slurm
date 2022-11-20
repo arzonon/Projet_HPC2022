@@ -49,8 +49,9 @@ plotCoverage --bamfiles $tab -p 6 \
     --outRawCounts "$OUTPUT"/coverage.tab \
     --ignoreDuplicates	#If set, reads that have the same orientation and start position will be considered only once.#
 
-echo "List SCRATCHDIR: "
-ls "$SCRATCHDIR" >&2
+bamPEFragmentSize -b $tab -p 6 -o /"$OUTPUT"/FragmentSize_hist
+
+echo "List SCRATCHDIR: " ls "$SCRATCHDIR" >&2
 # Move results in one's directory
 mv  "$SCRATCHDIR" "$OUTPUT"
 echo "Stop job : "`date` >&2

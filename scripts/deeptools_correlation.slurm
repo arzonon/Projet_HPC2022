@@ -65,6 +65,16 @@ plotCorrelation \
     -o "$OUTPUT"/heatmap_SpearmanCorr_readCounts.png   \
     --outFileCorMatrix "$OUTPUT"/SpearmanCorr_readCounts.tab
 
+plotCorrelation -in "$NPZ"/cov.npz \
+ -c pearson \
+ -p scatterplot \
+ -o "$OUTPUT"/scatterplot_pearson.pdf 
+
+plotCorrelation -in "$NPZ"/cov.npz \
+ -c spearman \
+ -p scatterplot \
+ -o "$OUTPUT"/scatterplot_spearman.pdf
+
 echo "List SCRATCHDIR: "
 ls "$SCRATCHDIR" >&2
 # Move results in one's directory
