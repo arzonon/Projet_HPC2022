@@ -32,8 +32,26 @@ SRR4785343  50k-24h-R3-sample.24h.2 GSM2367370  0.6G
 # Workflow
 ## I.Data pre-processing
 ### Data quality control
-###
+### Trimming
+### Collect adapters for read cleaning 
+
+https://github.com/timflutre/trimmomatic/tree/master/adapters/NexteraPE-PE.fa
+2015-03-5
+v0.33
+# Nextera R1
+>Trans2_rc
+CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+# Nextera R2
+>Trans1_rc
+CTGTCTCTTATACACATCTGACGCTGCCGACGA
+
+### Quality control 
 ## II.Mapping
+## Reference genome used 
+
+mm10 is likely UCSC version of the genome. GRCm38 is from Genome Reference Consortium (NCBI)
+
+GRCm38.p6 Release date: September 15, 2017
 ## III.Exploration des données
 ## IV.Identification of accessibility sites
 ## V. Identification of unique and common accessibility
@@ -42,29 +60,6 @@ SRR4785343  50k-24h-R3-sample.24h.2 GSM2367370  0.6G
 
 
 
-### Collect adapters for read cleaning 
-
-https://github.com/timflutre/trimmomatic/tree/master/adapters/NexteraPE-PE.fa
-
-2015-03-5
-
-v0.33
-
-# Nextera R1
-
->Trans2_rc
-
-CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
-
-# Nextera R2
-
->Trans1_rc
-
-CTGTCTCTTATACACATCTGACGCTGCCGACGA
 
 
-## Reference genome used 
 
-mm10 is likely UCSC version of the genome. GRCm38 is from Genome Reference Consortium (NCBI)
-
-GRCm38.p6 Release date: September 15, 2017
