@@ -1,1 +1,5 @@
 # Projet_HPC2022
+
+Le projet constiste à ré-analyser, sur un cluster de calcul du Mésocentre UCA, les données ATAC-seq produites dans la publication Gomez-Cabrero et al. (2019).
+Un des objectifs de cette étude est d'identifier les régions du génome accessibles à la transcription alors que l'ADN s'ouvre et se détache du complexe nucléosomique. Pour cela, l'analyse a été conduite sur une lignée cellulaire murine B3. La lignée cellulaire B3 de souris modélise le stade pré-BI (ou fraction C' de Hardy). Après la translocation nucléaire du facteur de transcription Ikaros, ces cellules progressent vers le stade pré-BII (ou fraction D de Hardy). Au cours du stade pré-BII (ou fraction D de Hardy), les progéniteurs des cellules B subissent un arrêt de croissance et une différenciation. La lignée cellulaire B3 a été transduite par voie rétrovirale avec un vecteur codant une protéine de fusion Ikaros-REt2, qui permet de contrôler les niveaux nucléaires d'Ikaros après exposition au médicament Tamoxifen. Après le traitement médicamenteux, les cultures ont été récoltées à 0 h et 24 h.
+
