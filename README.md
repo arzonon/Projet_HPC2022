@@ -32,30 +32,40 @@ SRR4785343  50k-24h-R3-sample.24h.2 GSM2367370  0.6G
 # Workflow
 ## I.Data pre-processing
 ### Data quality control
-### Trimming
-### Collect adapters for read cleaning 
+To see the quality of the dataset, we perform a quality control. We use the fastqc function for each sequencing data. This step is achieved by the 'atac_qc_init.slurm' script.
 
-https://github.com/timflutre/trimmomatic/tree/master/adapters/NexteraPE-PE.fa
-2015-03-5
-v0.33
-# Nextera R1
->Trans2_rc
-CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
-# Nextera R2
->Trans1_rc
-CTGTCTCTTATACACATCTGACGCTGCCGACGA
+### Trimming
+The next step is to eliminate the sequencing primers. We use the trimmomatic function on each sequencing data. This step is achievded by the 'atac_trim.slurm' script.
+
+The adapters used for the sequencing are Nextera-based primers collected here : https://github.com/timflutre/trimmomatic/tree/master/adapters/NexteraPE-PE.fa on 2015-03-5 and the version is v0.33.
 
 ### Quality control 
+It's necessary to make a second quality control in order to be sure of the quality of the remaining sequences. We will use the fastqc function on the results from the trimming. And this step is achieved by the 'atac_qc_post.slurm' script.
+
 ## II.Mapping
-## Reference genome used 
 
-mm10 is likely UCSC version of the genome. GRCm38 is from Genome Reference Consortium (NCBI)
+This step is to synchronize the forward and the reverse file of each sample. In order to do this, we do a mapping our sequences on the indexed reference genome (Mus_musculus_GRCm39 from Genome Reference Consortium (NCBI) Release date : June 24, 2020). 
+The mapping will be done with the Bowtie2 tool. This step is achieved by the "atac_bowtie2.slurm" script.
 
-GRCm38.p6 Release date: September 15, 2017
+### Cleaning of the alignments with the picard tools
+
+At this step, duplicates are removed to avoid bias on the furture analysis. We use the MarkDuplicates function from the picard module.
+This step can be achieved by the 'atac_picard.slurm" script.
+
 ## III.Exploration des données
+
+This part allows us to obtain some statistics on our data. We use the Deeptools module. We have looked at samples correlation and the coverage of each sample on the genome.
+This analysis is achieved by three scripts : deeptool_multisum.slurm who combine all the input BAM files, deeptools_correlation.slurm and deeptools_coverage.slurm
+
 ## IV.Identification of accessibility sites
+
+This step is to identify the DNA access sites with the callPeaks function from the MACS2 module. This step can be achieved by the 'macs2.slurm' script.
+
 ## V. Identification of unique and common accessibility
 
+This part allows us to see wich access regions are common and unique between the two cellular stage (0h and 24h) after exposition to the Tamoxifen drug. This analyze is performed by the intersect function from the bedtools module. Thanks to this step we will be able to make conclusions about the effect of the Tamoxifen. For exemple if an access site is open at t=0h and closed at t=24h, it means that the Tamoxifen drug open these sites.
+
+This part is achied by the 'bedtools_intersect.slurm' script.
 
 
 
