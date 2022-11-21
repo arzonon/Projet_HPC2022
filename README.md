@@ -37,7 +37,7 @@ To see the quality of the dataset, we perform a quality control. We use the fast
 ### Trimming
 The next step is to eliminate the sequencing primers. We use the trimmomatic function on each sequencing data. This step is achievded by the 'atac_trim.slurm' script.
 
-The adapters used for the sequencing are Nextera-based primers collected here : https://github.com/timflutre/trimmomatic/tree/master/adapters/NexteraPE-PE.fa on 2015-03-5 and the version is v0.33.
+The adapters used for the sequencing are Nextera-based primers collected here : https://github.com/timflutre/trimmomatic/tree/master/adapters/NexteraPE-PE.fa on 2015-03-5 and  the version is v0.33.
 
 ### Quality control 
 It's necessary to make a second quality control in order to be sure of the quality of the remaining sequences. We will use the fastqc function on the results from the trimming. And this step is achieved by the 'atac_qc_post.slurm' script.
@@ -66,6 +66,14 @@ This step is to identify the DNA access sites with the callPeaks function from t
 This part allows us to see wich access regions are common and unique between the two cellular stage (0h and 24h) after exposition to the Tamoxifen drug. This analyze is performed by the intersect function from the bedtools module. Thanks to this step we will be able to make conclusions about the effect of the Tamoxifen. For exemple if an access site is open at t=0h and closed at t=24h, it means that the Tamoxifen drug open these sites.
 
 This part is achied by the 'bedtools_intersect.slurm' script.
+
+
+##Get cluster usage information :
+
+
+##Launching workflow:
+Execute workflow.sh in main directory.
+All output will be found in "$HOME"/atacseq/results.
 
 
 
