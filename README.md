@@ -32,3 +32,12 @@ MACS manual : https://pypi.org/project/MACS2 Authors : Seguineau Pauline Zonon A
 Scripts :
 
 script_macs2.slurm
+
+Bedtools : 
+Bedtools Manual : https://bedtools.readthedocs.io/en/latest/index.html 
+Authors : Seguineau Pauline Zonon Aristides 
+
+Scripts : 
+
+bedtools_intersect.slurm
+
