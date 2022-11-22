@@ -44,7 +44,7 @@ mkdir -p -m 700 "$SCRATCHDIR"
 cd "$SCRATCHDIR"
 
 #Set up data directory
-DATA_DIR="$HOME"/atacseq/data/data/subset
+DATA_DIR="$HOME"/atacseq/data/data/raw
 
 #Run the program
 echo "Start on $SLURMD_NODENAME: "`date` >&2
