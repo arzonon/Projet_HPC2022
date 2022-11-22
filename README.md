@@ -1,4 +1,4 @@
-MetaData for each scripts of each subparts of the project and results files.
+MetaData for each scripts of each part of the project.
 
 QUALITY CONTROL :
 Authors : Goué Nadia Origin : Nadia Goué shared scripts for the project, copy from the server to the server several times between October 25 and November 18 on 2022
