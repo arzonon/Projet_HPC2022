@@ -67,10 +67,6 @@ This part allows us to see wich access regions are common and unique between the
 
 This part is achied by the 'bedtools_intersect.slurm' script.
 
-
-##Get cluster usage information :
-
-
 ##Launching workflow:
 Execute workflow.sh in main directory.
 All output will be found in "$HOME"/atacseq/results.
